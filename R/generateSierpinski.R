@@ -31,5 +31,8 @@ sampleVertex <- function(n) {
 #   * step.size = 1 --> end up at `to`
 #   * step.size = 0.5 --> halfway between `from` and `to`
 stepToVertex <- function(from, to, step.size) {
-  c(x=0, y=0)
+  c(
+    x = (1 - step.size) * from[["x"]] + step.size * to[["x"]],
+    y = (1 - step.size) * from[["y"]] + step.size * to[["y"]]
+  )
 }
